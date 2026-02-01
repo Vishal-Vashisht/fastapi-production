@@ -15,4 +15,4 @@ async def root_two(id: int):
 
 @app.get("/health/")
 async def get_health():
-    return {"health": "ok"}
+    return {"health": "ok", "serive": "production"}
