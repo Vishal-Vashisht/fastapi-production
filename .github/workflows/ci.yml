@@ -19,7 +19,7 @@ jobs:
                 username: ${{ secrets.SSH_USER }}
                 key: ${{ secrets.SSH_KEY }}
                 script: |
-                    git pull
                     cd fastapi-production
+                    git pull origin master
                     docker build -t fastapi-prod -f config/prod/Dockerfile .
-                    docker run -d   --name production-test   -p 8000:8000   fastapi-prod
+                    docker run -d --name production-test -p 8000:8000 fastapi-prod
